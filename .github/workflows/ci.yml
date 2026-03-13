@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Placeholder lint
+        run: echo "Wire project-specific lint command here"
+
+      - name: Placeholder typecheck
+        run: echo "Wire project-specific typecheck command here"
+
+      - name: Placeholder tests
+        run: echo "Wire project-specific test command here"
+
+      - name: Placeholder build
+        run: echo "Wire project-specific build command here"
+
+      - name: Placeholder docs check
+        run: echo "Add project-specific docs validation here"

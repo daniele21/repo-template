@@ -1,0 +1,21 @@
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Generic
+*.log
+*.tmp
+*.bak
+*.swp
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# Repository specific
+.codex/sessions/
+.gemini/
