@@ -1,0 +1,4 @@
+interface:
+  display_name: "GDPR Privacy Reviewer"
+  short_description: "Controlla artefatti e rischi GDPR"
+  default_prompt: "Use $gdpr-privacy-reviewer to review this change for GDPR artifacts, lawful basis, retention, transfers, processor accountability, and user-rights impact."

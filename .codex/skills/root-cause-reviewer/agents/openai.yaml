@@ -1,0 +1,4 @@
+interface:
+  display_name: "Root Cause Reviewer"
+  short_description: "Verifica se il fix risolve la causa"
+  default_prompt: "Use $root-cause-reviewer to assess whether this fix addresses the root cause or only mitigates the visible symptom."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Architecture Reviewer"
+  short_description: "Valida modularita, ownership e boundaries"
+  default_prompt: "Use $repo-architecture-reviewer to review this change for architectural boundaries, ownership, duplication, and correct placement of logic."
