@@ -2,7 +2,7 @@
 
 ## Contribution Principles
 
-- Read [AGENTS.md](/Users/moltisantid/Personal/repo_template/AGENTS.md) before making substantial changes.
+- Read [AGENTS.md](./AGENTS.md) before making substantial changes.
 - Start from product intent and documented requirements, not implementation convenience.
 - Prefer systemic fixes over local patches.
 - Keep docs, tests, and operational guidance aligned with code changes.

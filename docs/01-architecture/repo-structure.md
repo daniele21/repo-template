@@ -22,3 +22,7 @@
 - Prefer local reasoning and clear ownership over a low file count.
 - Use the tenant settings starter as the reference placement for contracts, domain logic, app handlers, and tests.
 - For multi-tenant systems, keep isolation assumptions documented instead of implied.
+
+## Canonical Example
+
+For a concrete end-to-end reference, follow [golden-example.md](./golden-example.md). It maps the tenant settings demo across spec, contracts, domain, app, runtime entrypoint, and tests.

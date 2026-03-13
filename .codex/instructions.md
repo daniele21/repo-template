@@ -1,6 +1,6 @@
 # Codex Instructions
 
-Read [AGENTS.md](/Users/moltisantid/Personal/repo_template/AGENTS.md) and the relevant `product/`, `docs/`, and `adr/` files before making substantial changes.
+Read [AGENTS.md](../AGENTS.md) and the relevant `product/`, `docs/`, and `adr/` files before making substantial changes.
 
 ## Mission
 

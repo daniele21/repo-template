@@ -18,12 +18,12 @@ Opinionated template for building client-ready, multi-tenant B2B SaaS products w
 
 Use this repo as an operating system, not just a code container.
 
-1. Read [AGENTS.md](/Users/moltisantid/Personal/repo_template/AGENTS.md)
-2. Read [/.codex/instructions.md](/Users/moltisantid/Personal/repo_template/.codex/instructions.md)
-3. Read relevant files in [product/](/Users/moltisantid/Personal/repo_template/product), [docs/](/Users/moltisantid/Personal/repo_template/docs), and [adr/](/Users/moltisantid/Personal/repo_template/adr)
+1. Read [AGENTS.md](./AGENTS.md)
+2. Read [.codex/instructions.md](./.codex/instructions.md)
+3. Read relevant files in [product/](./product), [docs/](./docs), and [adr/](./adr)
 4. Design before implementation
 5. Implement with tests and documentation updates
-6. Run specialist reviews through the skills listed in [/.codex/skill-index.md](/Users/moltisantid/Personal/repo_template/.codex/skill-index.md)
+6. Run specialist reviews through the skills listed in [.codex/skill-index.md](./.codex/skill-index.md)
 
 ## Structure
 
@@ -43,9 +43,10 @@ scripts/    Repository automation scripts
 
 Key architecture references:
 
-- [docs/01-architecture/repo-structure.md](/Users/moltisantid/Personal/repo_template/docs/01-architecture/repo-structure.md)
-- [docs/01-architecture/boundaries.md](/Users/moltisantid/Personal/repo_template/docs/01-architecture/boundaries.md)
-- [docs/01-architecture/multi-tenancy.md](/Users/moltisantid/Personal/repo_template/docs/01-architecture/multi-tenancy.md)
+- [docs/01-architecture/repo-structure.md](./docs/01-architecture/repo-structure.md)
+- [docs/01-architecture/boundaries.md](./docs/01-architecture/boundaries.md)
+- [docs/01-architecture/multi-tenancy.md](./docs/01-architecture/multi-tenancy.md)
+- [docs/01-architecture/golden-example.md](./docs/01-architecture/golden-example.md)
 
 ## Starter Commands
 
@@ -82,12 +83,25 @@ Ask Codex to:
 4. Run the relevant review skills
 5. Apply remediations and sync docs, changelog, and ADRs when needed
 
-The workflow is expanded in [/.codex/project-context.md](/Users/moltisantid/Personal/repo_template/.codex/project-context.md).
-The repeatable implementation paths are listed in [/.codex/golden-paths.md](/Users/moltisantid/Personal/repo_template/.codex/golden-paths.md).
+The workflow is expanded in [.codex/project-context.md](./.codex/project-context.md).
+The repeatable implementation paths are listed in [.codex/golden-paths.md](./.codex/golden-paths.md).
+
+## Demo Walkthrough
+
+Use the tenant settings flow as the canonical end-to-end example for this template:
+
+1. Spec: [docs/specs/tenant-settings-demo-spec.md](./docs/specs/tenant-settings-demo-spec.md)
+2. Contract and defaults: [packages/contracts/src/tenant-settings-contract.js](./packages/contracts/src/tenant-settings-contract.js)
+3. Domain rules: [packages/domain/src/tenant-settings-service.js](./packages/domain/src/tenant-settings-service.js)
+4. App routing and request handling: [apps/api/src/app.js](./apps/api/src/app.js)
+5. Runtime entrypoint: [apps/api/src/server.js](./apps/api/src/server.js)
+6. Regression coverage: [tests/api-tenant-settings.test.js](./tests/api-tenant-settings.test.js) and [tests/tenant-settings-service.test.js](./tests/tenant-settings-service.test.js)
+
+This path demonstrates the intended split between spec, contract validation, domain behavior, app composition, and tests while keeping privacy-preserving defaults explicit.
 
 ## GDPR Governance Pack
 
-Use the privacy section in [docs/04-privacy-gdpr/](/Users/moltisantid/Personal/repo_template/docs/04-privacy-gdpr) to make data handling explicit from the start. The pack includes templates for:
+Use the privacy section in [docs/04-privacy-gdpr/](./docs/04-privacy-gdpr) to make data handling explicit from the start. The pack includes templates for:
 
 - data inventory
 - lawful basis mapping
@@ -99,10 +113,10 @@ Use the privacy section in [docs/04-privacy-gdpr/](/Users/moltisantid/Personal/r
 
 ## Starting a New Feature
 
-1. Copy [docs/specs/spec-dev-template.md](/Users/moltisantid/Personal/repo_template/docs/specs/spec-dev-template.md)
+1. Copy [docs/specs/spec-dev-template.md](./docs/specs/spec-dev-template.md)
 2. Fill in the feature-specific spec
 3. Have Codex read the spec plus the relevant product and docs files
-4. Follow the relevant path in [/.codex/golden-paths.md](/Users/moltisantid/Personal/repo_template/.codex/golden-paths.md)
+4. Follow the relevant path in [.codex/golden-paths.md](./.codex/golden-paths.md)
 5. Implement and review through the operating workflow
 
 ## Notes

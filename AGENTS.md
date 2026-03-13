@@ -16,11 +16,11 @@ The repository is expected to function as an operating system for delivery:
 
 Read in this order before making any substantial change:
 
-1. [AGENTS.md](/Users/moltisantid/Personal/repo_template/AGENTS.md)
-2. [/.codex/instructions.md](/Users/moltisantid/Personal/repo_template/.codex/instructions.md)
-3. Relevant files in [product/](/Users/moltisantid/Personal/repo_template/product)
-4. Relevant files in [docs/](/Users/moltisantid/Personal/repo_template/docs)
-5. Relevant ADRs in [adr/](/Users/moltisantid/Personal/repo_template/adr)
+1. [AGENTS.md](./AGENTS.md)
+2. [.codex/instructions.md](./.codex/instructions.md)
+3. Relevant files in [product/](./product)
+4. Relevant files in [docs/](./docs)
+5. Relevant ADRs in [adr/](./adr)
 
 Use the repo sections like this:
 
