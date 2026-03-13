@@ -12,11 +12,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Placeholder secret scan
-        run: echo "Wire secret scanning here"
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "25"
 
-      - name: Placeholder dependency scan
-        run: echo "Wire dependency vulnerability scanning here"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.21.0
 
-      - name: Sensitive logging reminder
-        run: echo "Ensure no secrets or sensitive personal data are written to logs"
+      - name: Secret and sensitive logging scan
+        run: pnpm run security:check
+
+      - name: Dependency audit placeholder
+        run: |
+          echo "No external dependencies are declared in the starter."
+          echo "Extend this job with pnpm audit or SAST when the project adds dependencies."

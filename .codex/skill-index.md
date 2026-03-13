@@ -28,6 +28,18 @@ Suggested sequence:
 3. docs sync through `feature-docs-updater`
 4. release check through `deploy-readiness-checker` before shipping
 
+## Explicit Triggers
+
+- `root-cause-reviewer`: use for non-trivial bug fixes, workarounds, incident remediations, and regressions
+- `repo-architecture-reviewer`: use when code moves across layers, shared modules are introduced, or duplication appears
+- `security-privacy-reviewer`: use when auth, sensitive data, logging, retention, or integrations change
+- `gdpr-privacy-reviewer`: use when personal-data processing, subprocessors, transfers, user rights, or retention behavior change
+- `test-coverage-guardian`: use when behavior changes, new workflows are added, or a regression is fixed
+- `feature-docs-updater`: use after any feature change, user-visible behavior change, or architecture decision that affects docs
+- `deploy-readiness-checker`: use before release candidates, migrations, infra changes, or env/config changes
+- `ux-design-system-enforcer`: use for new UI, changed flows, or new shared components
+- `finops-observability-reviewer`: use for external providers, batch jobs, AI workloads, storage growth, or expensive workflows
+
 ## Typical Mappings
 
 - Bug fix: `root-cause-reviewer`, `test-coverage-guardian`
@@ -35,4 +47,5 @@ Suggested sequence:
 - GDPR-sensitive feature: `gdpr-privacy-reviewer`, `security-privacy-reviewer`, `feature-docs-updater`
 - UI feature: `ux-design-system-enforcer`, `feature-docs-updater`
 - Costly integration: `finops-observability-reviewer`, `deploy-readiness-checker`
+- Multi-tenant feature: `repo-architecture-reviewer`, `test-coverage-guardian`, `feature-docs-updater`
 - Refactor: `repo-architecture-reviewer`, `test-coverage-guardian`

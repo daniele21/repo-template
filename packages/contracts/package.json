@@ -1,0 +1,6 @@
+{
+  "name": "@template/contracts",
+  "private": true,
+  "type": "module",
+  "main": "./src/tenant-settings-contract.js"
+}

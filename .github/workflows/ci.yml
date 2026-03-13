@@ -13,17 +13,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Placeholder lint
-        run: echo "Wire project-specific lint command here"
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "25"
 
-      - name: Placeholder typecheck
-        run: echo "Wire project-specific typecheck command here"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.21.0
 
-      - name: Placeholder tests
-        run: echo "Wire project-specific test command here"
+      - name: Lint
+        run: pnpm run lint
 
-      - name: Placeholder build
-        run: echo "Wire project-specific build command here"
+      - name: Typecheck
+        run: pnpm run typecheck
 
-      - name: Placeholder docs check
-        run: echo "Add project-specific docs validation here"
+      - name: Test
+        run: pnpm run test
+
+      - name: Build
+        run: pnpm run build

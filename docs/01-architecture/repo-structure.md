@@ -3,6 +3,8 @@
 ## Default Layout
 
 - `apps/`: product entrypoints and route-level composition
+- `packages/contracts`: shared validation, defaults, and contracts
+- `packages/domain`: business rules and application-facing domain logic
 - `packages/`: reusable modules, domain code, UI primitives, shared contracts
 - `services/`: orchestration, jobs, integration workflows
 - `infra/`: platform and deployment assets
@@ -18,3 +20,5 @@
 - Keep domain rules close to typed contracts.
 - Avoid dumping unrelated helpers into generic utility files.
 - Prefer local reasoning and clear ownership over a low file count.
+- Use the tenant settings starter as the reference placement for contracts, domain logic, app handlers, and tests.
+- For multi-tenant systems, keep isolation assumptions documented instead of implied.

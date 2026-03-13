@@ -1,0 +1,6 @@
+{
+  "name": "@template/ui",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.js"
+}

@@ -10,7 +10,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Placeholder docs policy check
-        run: |
-          echo "If code or spec-sensitive paths change, ensure docs/spec updates are included."
-          echo "Optionally enforce ADR updates for major architectural changes."
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "25"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.21.0
+
+      - name: Docs policy check
+        env:
+          DOCS_CHECK_BASE: ${{ github.event.pull_request.base.sha }}
+          DOCS_CHECK_HEAD: ${{ github.sha }}
+        run: pnpm run docs:check

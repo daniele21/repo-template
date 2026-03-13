@@ -17,3 +17,7 @@ Record:
 - affected tenants or user groups
 - operational risks
 - rollback conditions
+
+See also:
+
+- `sla-slo-template.md`

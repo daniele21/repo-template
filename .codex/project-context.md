@@ -16,10 +16,13 @@ Use this file to orient Codex before implementation work.
 3. Read the relevant product docs
 4. Read the relevant pillar docs and ADRs
    - if personal data is involved, read the relevant files in `docs/04-privacy-gdpr/`
+   - if the change affects tenant boundaries, config, billing, or isolation, read `docs/01-architecture/multi-tenancy.md`
 5. Propose design, risks, impacted layers, tests, and docs to update
 6. Implement
 7. Run the relevant review skills
 8. Apply remediations and sync docs
+
+Use [/.codex/golden-paths.md](/Users/moltisantid/Personal/repo_template/.codex/golden-paths.md) when the task fits a standard path such as feature work, bug fixing, privacy-sensitive change, integration change, or release readiness.
 
 ## Typical Prompt Pattern
 
@@ -49,4 +52,5 @@ Use specialist review when the change affects:
 - operational runbooks or deployments
 - costly external providers or AI workloads
 - architecture boundaries or shared contracts
+- tenant boundaries, shared resources, or per-tenant behavior
 - important UX paths

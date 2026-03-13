@@ -16,3 +16,7 @@ Each ADR should capture:
 - alternatives considered
 - tradeoffs
 - consequences
+
+See also:
+
+- `client-customization-policy.md`

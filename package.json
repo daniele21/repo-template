@@ -1,0 +1,21 @@
+{
+  "name": "repo-template",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.21.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "node apps/api/src/server.js",
+    "dev:watch": "node --watch-path=apps/api/src --watch-path=packages apps/api/src/server.js",
+    "lint": "node ./scripts/lint.mjs",
+    "typecheck": "node ./scripts/typecheck.mjs",
+    "test": "node --test",
+    "build": "node ./scripts/build.mjs",
+    "docs:check": "node ./scripts/docs-check.mjs",
+    "security:check": "node ./scripts/security-check.mjs",
+    "verify": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build"
+  }
+}

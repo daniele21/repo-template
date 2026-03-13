@@ -19,3 +19,7 @@ node_modules/
 # Repository specific
 .codex/sessions/
 .gemini/
+dist/
+coverage/
+dist/
+coverage/

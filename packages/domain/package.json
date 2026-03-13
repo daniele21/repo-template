@@ -1,0 +1,6 @@
+{
+  "name": "@template/domain",
+  "private": true,
+  "type": "module",
+  "main": "./src/tenant-settings-service.js"
+}

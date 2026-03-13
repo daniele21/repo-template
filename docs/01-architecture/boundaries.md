@@ -16,3 +16,4 @@
 - Services should orchestrate; they should not become dumping grounds for every helper.
 - Data access should map storage concerns into typed contracts before higher layers consume them.
 - Shared code should have a clear owner and purpose.
+- Tenant-aware logic should not be hidden in ad hoc helpers. Keep tenant scope explicit in contracts, repositories, and authorization decisions.

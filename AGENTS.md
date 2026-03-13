@@ -58,6 +58,8 @@ Rules:
 - Do not create shared packages without a real reuse case.
 - Keep contracts typed and naming explicit.
 
+When the product is multi-tenant, also respect tenant boundaries defined in `docs/01-architecture/multi-tenancy.md` and any tenant-partitioning rules in `docs/05-data/`.
+
 ## Root Cause Before Remedy
 
 Every bug, anomaly, or improvement request must be evaluated at the causal layer first.

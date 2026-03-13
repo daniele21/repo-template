@@ -15,3 +15,8 @@
 - new storage of sensitive data
 - new vendor or dependency with security implications
 - changes to logging or monitoring that may expose sensitive values
+
+See also:
+
+- `shared-responsibility-model.md`
+- `vendor-intake-checklist.md`

@@ -1,0 +1,6 @@
+{
+  "name": "@template/api",
+  "private": true,
+  "type": "module",
+  "main": "./src/server.js"
+}
