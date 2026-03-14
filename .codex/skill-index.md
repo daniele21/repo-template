@@ -2,6 +2,10 @@
 
 This template includes eight core Codex skills plus an optional dedicated GDPR specialist. Treat them as specialist reviewers and updaters, not general-purpose replacement agents.
 
+These skills are intentionally repo-local. They encode this template's operating model, documentation layout, and review expectations. Do not copy them directly into `~/.codex/skills` without first removing repo-specific assumptions.
+
+Use [.codex/global-skill-strategy.md](./global-skill-strategy.md) to decide what should become a globally installed skill versus what should remain part of this repository contract.
+
 ## Core Skills
 
 - `root-cause-reviewer`: checks whether a proposed fix addresses the underlying cause
