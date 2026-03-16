@@ -5,7 +5,7 @@ description: Identify and update the product, architecture, operational, and cha
 
 # Feature Docs Updater
 
-Use this skill after feature work, meaningful bug fixes, and architectural changes.
+Use this skill after discovery, strategy work, feature work, meaningful bug fixes, and architectural changes.
 
 ## Inputs
 
@@ -15,9 +15,9 @@ Use this skill after feature work, meaningful bug fixes, and architectural chang
 
 ## Workflow
 
-1. Map the behavior, architecture, and operational surfaces affected.
-2. Identify which docs should change.
-3. Update or recommend updates to specs, pillar docs, changelog, and ADRs.
+1. Map the behavior, architecture, operational, and planning surfaces affected.
+2. Identify which docs should change, including discovery docs when project direction changes.
+3. Update or recommend updates to project briefs, discovery docs, specs, pillar docs, changelog, and ADRs.
 4. Ensure documentation reflects actual implemented behavior.
 
 ## Output
@@ -26,6 +26,7 @@ Use this skill after feature work, meaningful bug fixes, and architectural chang
 - changed or recommended doc files
 - changelog suggestion
 - ADR recommendation
+- project discovery doc recommendation when strategy or plan changed
 
 ## Review Questions
 

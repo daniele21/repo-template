@@ -1,0 +1,4 @@
+interface:
+  display_name: "Admin Cost Panel Planner"
+  short_description: "Definisce visibilita costi admin"
+  default_prompt: "Use $admin-cost-panel-planner to define the admin-facing cost, usage, attribution, and anomaly monitoring view for this product."

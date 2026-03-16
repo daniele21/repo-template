@@ -18,6 +18,108 @@ Only proceed directly to implementation when:
 - the key decisions are already documented in the repository
 - the remaining decisions are low-impact and safely reversible
 
+Follow this sequence for new products or major initiatives:
+
+1. brief
+2. brainstorming
+3. strategy
+4. delivery plan
+5. implementation
+6. review and documentation sync
+
+## New Project
+
+1. Create or update `product/project-brief.md`.
+2. Enter discovery mode and create or update `docs/00-discovery/00-project-brainstorm.md`.
+3. Stop for user alignment when foundational decisions remain open.
+4. Freeze the chosen direction in `docs/00-discovery/01-solution-strategy.md` and relevant ADRs.
+5. Convert the approved strategy into `docs/00-discovery/02-delivery-plan.md`.
+6. Implement the first slice only after the strategy and plan are aligned.
+7. Run the relevant reviewer skills and sync docs.
+
+### Step 1 - Create Or Update The Project Brief
+
+Capture:
+
+- objective
+- users
+- requirements
+- constraints
+- AI usage when relevant
+- privacy sensitivity
+- integrations
+- admin needs
+- success criteria
+- known risks
+- open questions
+
+Do not implement yet.
+
+### Step 2 - Enter Discovery Mode
+
+Create or update `docs/00-discovery/00-project-brainstorm.md`.
+
+Identify:
+
+- unresolved high-impact decisions
+- architecture options
+- security and privacy concerns
+- AI governance concerns
+- UX direction options
+- cost and admin monitoring needs
+
+For each key decision:
+
+- state what must be decided
+- explain why it matters
+- present options
+- show pros and cons
+- recommend one path
+
+Stop for user alignment if foundational choices remain open.
+
+### Step 3 - Freeze The Solution Strategy
+
+Once the main direction is aligned, create or update:
+
+- `docs/00-discovery/01-solution-strategy.md`
+- relevant ADRs in `adr/`
+
+Document:
+
+- chosen architecture
+- chosen stack
+- rejected alternatives
+- data and tenancy model
+- security baseline
+- privacy / GDPR approach
+- AI governance / AI Act approach when relevant
+- UX / UI direction
+- observability and admin cost visibility strategy
+- accepted tradeoffs
+
+Do not implement yet.
+
+### Step 4 - Build The Delivery Plan
+
+Create or update `docs/00-discovery/02-delivery-plan.md`.
+
+Define:
+
+- implementation slices
+- dependencies
+- testing plan
+- docs plan
+- security work
+- privacy / GDPR work
+- AI governance work when relevant
+- UX / UI work
+- observability and cost monitoring work
+- definition of ready
+- definition of done
+
+Stop for approval if the plan contains major open questions.
+
 ## New Feature
 
 1. Read `AGENTS.md`, `/.codex/instructions.md`, and the relevant product/docs files.
@@ -82,6 +184,43 @@ If the fix requires a high-impact decision, present:
 - recommended path
 
 Do not implement a local patch as if it were a final solution when the real issue is systemic.
+
+## Change Request
+
+1. Clarify what is being requested and why.
+2. Assess the requested change across architecture, data model, security, privacy/GDPR, AI governance, UX/UI, observability, cost, admin monitoring, tests, and docs.
+3. If the change is high-impact, present the viable options and recommended path before implementation.
+4. Update strategy, plan, or ADRs if the change materially alters project assumptions.
+5. Implement the chosen change, then add tests, update docs, and run the relevant reviewer skills.
+
+### Step 1 - Understand The Requested Change
+
+Create or update a change spec if needed:
+
+- `docs/specs/feature-change-template.md`
+
+Clarify:
+
+- what is being requested
+- why it is needed
+- what user workflow changes
+- whether the change is local or potentially systemic
+
+### Step 2 - Impact Review
+
+Assess the requested change across:
+
+- architecture
+- data model
+- security
+- privacy / GDPR
+- AI governance / AI Act
+- UX / UI
+- observability
+- cost
+- admin monitoring
+- tests
+- documentation
 
 ## Privacy-Sensitive Change
 

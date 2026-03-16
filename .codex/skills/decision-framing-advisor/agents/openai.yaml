@@ -1,0 +1,4 @@
+interface:
+  display_name: "Decision Framing Advisor"
+  short_description: "Framing di decisioni e tradeoff"
+  default_prompt: "Use $decision-framing-advisor to identify the unresolved high-impact decisions, compare the viable options, and recommend a path before implementation."

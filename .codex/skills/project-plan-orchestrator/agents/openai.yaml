@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Plan Orchestrator"
+  short_description: "Traduce la strategia in piano"
+  default_prompt: "Use $project-plan-orchestrator to turn the approved strategy into implementation slices, dependencies, and delivery requirements."

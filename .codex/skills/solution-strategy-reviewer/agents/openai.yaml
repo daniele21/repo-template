@@ -1,0 +1,4 @@
+interface:
+  display_name: "Solution Strategy Reviewer"
+  short_description: "Confronta strategie e tradeoff"
+  default_prompt: "Use $solution-strategy-reviewer to compare the viable solution strategies for this project and recommend the best path based on tradeoffs."

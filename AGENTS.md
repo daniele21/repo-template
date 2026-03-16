@@ -148,6 +148,116 @@ When foundational decisions are still open, respond with:
 3. Safe assumptions that can be defaulted
 4. What can be implemented immediately vs what should wait
 
+## Mandatory Discovery Artifacts For New Projects
+
+Before implementation of a new product, major initiative, or macro-feature with unclear foundations, create or update:
+
+- `product/project-brief.md`
+- `docs/00-discovery/00-project-brainstorm.md`
+- `docs/00-discovery/01-solution-strategy.md`
+- `docs/00-discovery/02-delivery-plan.md`
+
+Treat these documents as the living source of truth during discovery, alignment, and planning.
+
+## Interactive Brainstorming Policy
+
+`docs/00-discovery/00-project-brainstorm.md` is the working document for early project exploration.
+
+Keep it updated until:
+
+- the product direction is clear enough
+- major tradeoffs are visible
+- architecture options have been evaluated
+- privacy, security, and AI governance concerns are understood
+- admin monitoring and cost visibility expectations are explicit
+- the user has clearly approved the strategic direction
+
+Do not begin implementation while blocking decisions remain open in the brainstorming document.
+
+## Strategy Freeze Policy
+
+Once the main direction is agreed, consolidate it in:
+
+- `docs/00-discovery/01-solution-strategy.md`
+- relevant ADRs in `adr/`
+
+The strategy must explicitly document:
+
+- chosen architecture
+- rejected alternatives
+- accepted tradeoffs
+- data and tenancy model
+- security baseline
+- privacy / GDPR approach
+- AI governance / AI Act approach when relevant
+- UX / UI direction
+- observability and cost monitoring approach
+- admin cost panel expectations when relevant
+
+## Delivery Planning Policy
+
+Before implementation, convert the approved strategy into a delivery plan in `docs/00-discovery/02-delivery-plan.md`.
+
+The delivery plan must define:
+
+- implementation slices
+- dependencies
+- testing expectations
+- documentation updates
+- privacy / GDPR work
+- AI governance / AI Act work when relevant
+- security work
+- UX / UI work
+- observability and admin cost monitoring work
+- definition of ready
+- definition of done
+
+## Approval Gate Before Implementation
+
+Implementation must not begin until these items are sufficiently clear and approved:
+
+- the project brief exists
+- the brainstorming phase has converged
+- the solution strategy has been documented
+- the delivery plan has been documented
+- major architectural decisions are no longer open
+- major privacy and security concerns are understood
+- AI usage is clarified when relevant
+- admin cost visibility expectations are clarified when relevant
+
+## Admin Cost Visibility Requirement
+
+Every project must explicitly consider how costs and operational usage will be monitored.
+
+When the product uses external APIs, AI providers, cloud services, storage-heavy workflows, or usage-based billing components, evaluate whether an admin-facing monitoring view is required.
+
+At minimum, the strategy and plan should consider:
+
+- cost drivers
+- service usage metrics
+- provider attribution
+- tenant attribution when relevant
+- workflow or feature attribution when relevant
+- anomaly or threshold visibility
+
+## AI Governance Requirement
+
+If the product uses AI or automated decision support, explicitly assess:
+
+- whether AI is actually needed
+- what role AI plays
+- whether the workflow affects rights, sensitive decisions, or regulated contexts
+- whether human oversight is required
+- what provider or model governance is needed
+- what logging, evaluations, and output controls are needed
+- whether AI Act concerns must be tracked
+
+Document AI-related decisions in:
+
+- `docs/10-ai-governance/`
+- `docs/00-discovery/01-solution-strategy.md`
+- `docs/00-discovery/02-delivery-plan.md`
+
 ## Testing Policy
 
 - New logic requires unit tests.

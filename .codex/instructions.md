@@ -73,6 +73,45 @@ If a decision is low-impact and easily reversible, you may proceed with a reason
 - explain the tradeoff
 - explain why the default is safe
 
+For new products or major initiatives, create or update these documents before implementation:
+
+- `product/project-brief.md`
+- `docs/00-discovery/00-project-brainstorm.md`
+- `docs/00-discovery/01-solution-strategy.md`
+- `docs/00-discovery/02-delivery-plan.md`
+
+Treat `00-project-brainstorm.md` as the interactive decision workspace. Keep refining it until:
+
+- scope is clear enough
+- main architecture choices are evaluated
+- privacy and security concerns are understood
+- AI usage is clarified when relevant
+- admin cost visibility expectations are defined
+- the user has approved the overall direction
+
+Do not move from brainstorming to coding without:
+
+- a solution strategy
+- a delivery plan
+- explicit awareness of compliance, security, UX, cost, and observability implications
+
+If AI is part of the product, always assess:
+
+- whether AI is actually needed
+- what role it plays
+- what governance and oversight it needs
+- whether AI Act concerns should be documented
+
+Update the relevant documents under `docs/10-ai-governance/` and reflect the decisions in strategy and delivery planning.
+
+When the product uses usage-based services, APIs, AI providers, or cloud resources, explicitly evaluate whether an admin cost panel is required.
+
+For major changes or bug fixes:
+
+- check root cause first
+- assess impacts on architecture, privacy, AI governance, security, UX, cost, tests, and docs
+- present options and tradeoffs when the change is high-impact
+
 Always:
 
 - read the relevant repository context before asking for decisions
@@ -80,6 +119,7 @@ Always:
 - surface only the decisions that are truly relevant for the requested work
 - recommend a direction rather than only listing options
 - avoid low-value questions when the repository already answers them
+- keep project discovery, strategy, and planning documents aligned
 
 When important decisions are still open, respond with:
 

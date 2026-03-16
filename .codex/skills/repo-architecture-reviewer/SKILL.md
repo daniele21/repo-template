@@ -5,7 +5,7 @@ description: Review a change for modularity, ownership, architectural boundaries
 
 # Repo Architecture Reviewer
 
-Use this skill when a change affects repository structure, shared modules, service boundaries, or placement of logic.
+Use this skill when a change affects repository structure, shared modules, service boundaries, placement of logic, or architectural choices that must be evaluated before implementation.
 
 ## Inputs
 
@@ -15,8 +15,8 @@ Use this skill when a change affects repository structure, shared modules, servi
 
 ## Workflow
 
-1. Map the touched layers and current ownership.
-2. Check whether logic is placed in the correct layer.
+1. Map the touched or proposed layers and current ownership.
+2. Check whether logic is or would be placed in the correct layer.
 3. Identify duplication, mixed responsibilities, or vague shared abstractions.
 4. Recommend the smallest structural change that creates a durable boundary.
 
