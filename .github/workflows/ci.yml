@@ -34,3 +34,15 @@ jobs:
 
       - name: Build
         run: pnpm run build
+
+      - name: Docs policy check
+        env:
+          DOCS_CHECK_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          DOCS_CHECK_HEAD: ${{ github.sha }}
+        run: pnpm run docs:check
+
+      - name: Secret and sensitive logging scan
+        run: pnpm run security:check
+
+      - name: Dependency audit
+        run: pnpm run deps:audit

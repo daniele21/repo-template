@@ -123,3 +123,7 @@ Use the privacy section in [docs/04-privacy-gdpr/](./docs/04-privacy-gdpr) to ma
 
 - This template is stack-agnostic by design. Replace or extend the starter after choosing the project runtime.
 - The included workflows run real repository checks and can be extended with framework-specific tooling later.
+
+
+For a full step-by-step guide on starting a new project with this template, read:
+- `docs/how-to-start-a-new-project.md`

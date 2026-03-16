@@ -6,6 +6,7 @@ Use these files to make data handling explicit and reviewable:
 
 - [gdpr-reference-guide.md](./gdpr-reference-guide.md)
 - [gdpr-control-matrix.md](./gdpr-control-matrix.md)
+- [gdpr-project-applicability-template.md](./gdpr-project-applicability-template.md)
 - [privacy-baseline.md](./privacy-baseline.md)
 - [ropa-processor.md](./ropa-processor.md)
 - [data-inventory.md](./data-inventory.md)

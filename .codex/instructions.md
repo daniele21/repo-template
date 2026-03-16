@@ -109,9 +109,11 @@ Do not improvise legal interpretations from memory.
 
 If the baseline marks an issue as unclear, high-risk, recently changed, or requiring human review, stop and flag it explicitly.
 
+The legal source hierarchy is defined in `docs/legal/legal-source-register.md`. Follow `docs/legal/legal-update-policy.md` before doing live legal research.
+
 Use live external sources only when:
 
-- the legal source register says the baseline may be outdated
+- the legal source register (`docs/legal/legal-source-register.md`) says the baseline may be outdated
 - the topic is explicitly marked as watchlist or pending
 - the user requests a fresh legal-source check
 

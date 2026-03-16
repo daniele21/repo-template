@@ -13,6 +13,7 @@
 - Retention/deletion/export impact:
 - Subprocessor or vendor impact:
 - Cross-border transfer impact:
+- AI governance / AI Act impact:
 - Security impact:
 - UX/UI impact:
 - Observability/cost impact:

@@ -25,7 +25,5 @@ jobs:
       - name: Secret and sensitive logging scan
         run: pnpm run security:check
 
-      - name: Dependency audit placeholder
-        run: |
-          echo "No external dependencies are declared in the starter."
-          echo "Extend this job with pnpm audit or SAST when the project adds dependencies."
+      - name: Dependency audit
+        run: pnpm run deps:audit

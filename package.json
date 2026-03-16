@@ -16,6 +16,8 @@
     "build": "node ./scripts/build.mjs",
     "docs:check": "node ./scripts/docs-check.mjs",
     "security:check": "node ./scripts/security-check.mjs",
-    "verify": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build"
+    "deps:audit": "node ./scripts/dependency-audit.mjs",
+    "verify": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build",
+    "verify:full": "pnpm run verify && pnpm run docs:check && pnpm run security:check && pnpm run deps:audit"
   }
 }
