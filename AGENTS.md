@@ -72,6 +72,82 @@ Every bug, anomaly, or improvement request must be evaluated at the causal layer
   - what protections prevent recurrence
   - what docs, tests, monitors, or ADRs must change
 
+## Decision Discovery Policy
+
+Before implementing any new feature, architecture change, integration, workflow, or product setup, first determine whether there are unresolved high-impact decisions that should be made explicit.
+
+Do not silently assume foundational choices when those choices materially affect:
+
+- product scope
+- user roles and permissions
+- architecture
+- data model
+- integrations
+- security
+- privacy/GDPR
+- UX/UI flows
+- environments and deployment
+- observability
+- cost structure
+
+When important decisions are still open, pause implementation and first provide a decision analysis.
+
+For each unresolved decision:
+
+1. state what must be decided
+2. explain why it matters
+3. present the main viable options
+4. show pros, cons, risks, and tradeoffs
+5. recommend one option with rationale
+6. ask for confirmation before proceeding when the decision is foundational or hard to reverse
+
+Do not ask unnecessary questions. Only surface decisions that are:
+
+- high-impact
+- hard to reverse later
+- ambiguous from the available repository context
+- likely to affect maintainability, privacy, security, cost, or user experience
+
+If the repository documentation already resolves a decision, use that decision and state that it is already defined.
+
+If a decision is low-impact and easily reversible, you may proceed with a reasonable default, but you must:
+
+- make the assumption explicit
+- explain why it is safe to default
+- note how it can be changed later if needed
+
+Do not ask for decisions that are already resolved in the repository documentation.
+Do not ask low-value questions.
+Only surface decisions that materially affect the solution.
+
+### Standard Decision Categories
+
+Review whether any of these categories are still unresolved before implementation:
+
+- Product: target users, problem being solved, scope, non-scope, business rules, success criteria
+- Architecture: modular monolith vs service split, sync vs async flows, persistence approach, layer boundaries
+- Data: core entities, source of truth, personal data involved, retention and deletion implications, import/export requirements
+- Security: authentication model, authorization model, role boundaries, exposed interfaces, secret handling
+- Privacy / GDPR: lawful basis assumptions, data minimization, purpose limitation, retention impact, data subject rights, processors or subprocessors involved
+- UX / UI: primary user journey, desktop/mobile priority, workflow shape, validation and feedback patterns, loading, empty, error, and success states
+- Operations: target environments, deployment model, rollback expectations, observability requirements, runbook implications
+- FinOps: cost drivers, external providers, caching opportunities, usage-sensitive architecture choices
+
+### Required Output Format For Open Decisions
+
+When foundational decisions are still open, respond with:
+
+1. Decisions that need confirmation
+2. For each decision:
+   - what must be decided
+   - why it matters
+   - available options
+   - pros
+   - cons
+   - recommendation
+3. Safe assumptions that can be defaulted
+4. What can be implemented immediately vs what should wait
+
 ## Testing Policy
 
 - New logic requires unit tests.

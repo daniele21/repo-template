@@ -20,6 +20,40 @@
 - In scope:
 - Out of scope:
 
+## Open Decisions
+
+Document the unresolved decisions that should be clarified before implementation.
+
+For each decision include:
+
+### Decision
+
+What must be decided?
+
+### Why it matters
+
+Why does this decision affect product quality, architecture, privacy, security, cost, or UX?
+
+### Options
+
+List the viable options.
+
+### Pros
+
+Summarize the advantages of each option.
+
+### Cons
+
+Summarize the drawbacks and risks of each option.
+
+### Recommendation
+
+Which option is recommended and why?
+
+### Final choice
+
+Record the selected direction once confirmed.
+
 ## Functional Requirements
 
 - Requirement 1:
@@ -41,6 +75,16 @@
 - Sensitive data involved:
 - Tenant boundaries:
 - Processor or controller role:
+
+## Problem Origin / Root Cause Hypothesis
+
+If this work is triggered by a bug, incident, or repeated friction, document:
+
+- observed symptom
+- likely root cause
+- whether the issue is local or systemic
+- what upstream layer may need to change
+- whether any workaround is temporary
 
 ## Privacy and Security Implications
 
