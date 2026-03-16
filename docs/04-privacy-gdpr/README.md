@@ -4,6 +4,8 @@ This folder contains the privacy and GDPR governance artifacts that sit on top o
 
 Use these files to make data handling explicit and reviewable:
 
+- [gdpr-reference-guide.md](./gdpr-reference-guide.md)
+- [gdpr-control-matrix.md](./gdpr-control-matrix.md)
 - [privacy-baseline.md](./privacy-baseline.md)
 - [ropa-processor.md](./ropa-processor.md)
 - [data-inventory.md](./data-inventory.md)
@@ -14,5 +16,7 @@ Use these files to make data handling explicit and reviewable:
 - [subprocessors.md](./subprocessors.md)
 - [transfer-assessment.md](./transfer-assessment.md)
 - [dpia-template.md](./dpia-template.md)
+
+Start legal interpretation from the internal baseline and control matrix, then use the project artifacts to record what applies in practice.
 
 These files support engineering governance. They do not replace legal review, contracts, or organizational policies.

@@ -104,6 +104,17 @@ If AI is part of the product, always assess:
 
 Update the relevant documents under `docs/10-ai-governance/` and reflect the decisions in strategy and delivery planning.
 
+For GDPR and AI Act topics, use the repository legal baseline as the default source of truth.
+Do not improvise legal interpretations from memory.
+
+If the baseline marks an issue as unclear, high-risk, recently changed, or requiring human review, stop and flag it explicitly.
+
+Use live external sources only when:
+
+- the legal source register says the baseline may be outdated
+- the topic is explicitly marked as watchlist or pending
+- the user requests a fresh legal-source check
+
 When the product uses usage-based services, APIs, AI providers, or cloud resources, explicitly evaluate whether an admin cost panel is required.
 
 For major changes or bug fixes:

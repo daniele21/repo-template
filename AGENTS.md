@@ -291,6 +291,22 @@ Documentation must describe reality, not intent that was never implemented.
 - Check whether the change affects the GDPR docs in `docs/04-privacy-gdpr/`, especially data inventory, lawful basis, retention, subprocessors, transfers, and data-subject-rights handling.
 - Escalate legal/compliance questions instead of implying certification.
 
+## Legal Baseline Policy
+
+For GDPR and AI Act topics, use the repository legal baseline as the default source of truth.
+
+Do not improvise legal interpretations from memory.
+
+If the baseline marks an issue as unclear, high-risk, recently changed, or requiring human review, stop and flag it explicitly.
+
+Use live external sources only when:
+
+- the legal source register says the baseline may be outdated
+- the topic is explicitly marked as watchlist or pending
+- the user requests a fresh legal-source check
+
+Treat repository legal documents as an operational baseline, not as legal advice or certification.
+
 ## UX/UI Policy
 
 - Use shared tokens, shared components, and documented patterns.
