@@ -1,4 +1,0 @@
-interface:
-  display_name: "Deploy Readiness Checker"
-  short_description: "Verifica readiness di rilascio e rollback"
-  default_prompt: "Use $deploy-readiness-checker to review this release for deployment readiness, migration risk, monitoring coverage, and rollback gaps."

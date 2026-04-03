@@ -1,4 +1,0 @@
-interface:
-  display_name: "FinOps Observability Reviewer"
-  short_description: "Controlla costi, telemetry e guardrail"
-  default_prompt: "Use $finops-observability-reviewer to review this change for cost visibility, telemetry gaps, provider risk, and optimization opportunities."

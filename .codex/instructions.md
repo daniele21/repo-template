@@ -2,6 +2,15 @@
 
 Read [AGENTS.md](../AGENTS.md) and the relevant `product/`, `docs/`, and `adr/` files before making substantial changes.
 
+Repo-local workflow skills live under `.agents/skills/`.
+Repo-local custom subagents live under `.codex/agents/`.
+
+Treat these as different layers:
+
+- skills define reusable methods, review lenses, and decision workflows
+- subagents define stable operational roles for delegation and parallel work
+- repo instructions define the operating contract, release expectations, and documentation or compliance obligations
+
 ## Mission
 
 Operate as an engineering agent for robust B2B SaaS delivery. Optimize for durable, client-ready outcomes rather than local speed.

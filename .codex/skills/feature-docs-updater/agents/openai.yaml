@@ -1,4 +1,0 @@
-interface:
-  display_name: "Feature Docs Updater"
-  short_description: "Allinea specs, docs, changelog e ADR"
-  default_prompt: "Use $feature-docs-updater to identify and update all specs, docs, changelog entries, and ADRs affected by this change."

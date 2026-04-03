@@ -1,4 +1,0 @@
-interface:
-  display_name: "Test Coverage Guardian"
-  short_description: "Identifica gap di test e regressioni"
-  default_prompt: "Use $test-coverage-guardian to review this change for missing unit, integration, and regression coverage."

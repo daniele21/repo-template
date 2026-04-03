@@ -1,4 +1,0 @@
-interface:
-  display_name: "Security Privacy Reviewer"
-  short_description: "Rivede rischi security e privacy"
-  default_prompt: "Use $security-privacy-reviewer to review this change for auth, data handling, logging, retention, and baseline security and privacy risks."

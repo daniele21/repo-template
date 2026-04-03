@@ -1,10 +1,20 @@
 # Skill Index
 
-This template includes discovery, planning, and review skills. Treat them as specialist collaborators inside the repo operating model, not as a replacement for reading project context first.
+This template includes discovery, planning, and review skills under `.agents/skills/`.
+
+Treat skills as methods, not as people. They are reusable workflows and review lenses, not a replacement for reading project context first.
 
 These skills are intentionally repo-local. They encode this template's operating model, documentation layout, and review expectations. Do not copy them directly into `~/.codex/skills` without first removing repo-specific assumptions.
 
+Operational delegation belongs in `.codex/agents/`, where a small set of stable subagent roles can apply one or more skills when needed.
+
 Use [.codex/global-skill-strategy.md](./global-skill-strategy.md) to decide what should become a globally installed skill versus what should remain part of this repository contract.
+
+## Skills Versus Subagents
+
+- Skills answer: when to activate, what to read, which workflow to run, and what output to produce.
+- Subagents answer: what type of thread they own, what sandbox they use, what reasoning profile they use, and which skills they may apply.
+- Avoid one-to-one duplication between a skill name and a subagent name. For example, keep `repo-architecture-reviewer` as a skill and let `reviewer` use it when the task requires an architecture lens.
 
 ## Discovery And Planning Skills
 
@@ -72,3 +82,14 @@ Suggested sequence:
 - Costly integration: `finops-observability-reviewer`, `deploy-readiness-checker`
 - Multi-tenant feature: `repo-architecture-reviewer`, `test-coverage-guardian`, `feature-docs-updater`
 - Refactor: `repo-architecture-reviewer`, `test-coverage-guardian`
+
+## Canonical Subagents
+
+Use a small number of role-based subagents from `.codex/agents/`:
+
+- `repo_scout`: read-only explorer for impacted files, layers, entrypoints, and execution paths
+- `implementer`: write-capable agent for small, targeted, low-drift code changes
+- `reviewer`: read-only technical reviewer that applies the relevant specialist skills
+- `docs_syncer`: docs-focused agent that updates specs, ADRs, changelog, and operational docs when needed
+- `docs_researcher`: optional read-only agent for framework, API, or external-doc verification
+- `browser_debugger`: optional browser-focused agent for UI reproduction and evidence gathering

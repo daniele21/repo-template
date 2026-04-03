@@ -1,4 +1,0 @@
-interface:
-  display_name: "AI Act Reviewer"
-  short_description: "Valuta AI governance e AI Act"
-  default_prompt: "Use $ai-act-reviewer to assess whether this product or change introduces AI governance concerns, AI Act applicability signals, and required documentation."

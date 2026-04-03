@@ -1,6 +1,6 @@
 # Global Skill Strategy
 
-Use this note when deciding whether a skill from this template belongs in `~/.codex/skills` or should stay repo-local.
+Use this note when deciding whether a skill from this template belongs in `~/.codex/skills` or should stay repo-local under `.agents/skills/`.
 
 ## Decision Rule
 
@@ -41,17 +41,17 @@ Before promoting any skill to `~/.codex/skills`, remove or rewrite:
 
 ## Current Repo Mapping
 
-Treat the files under `.codex/skills/` as local reviewer roles, not ready-to-install global skills.
+Treat the files under `.agents/skills/` as repo-local methods. Treat the files under `.codex/agents/` as the operational delegation layer. Do not mirror the same concern in both layers with the same name.
 
-- `.codex/skills/repo-architecture-reviewer/`: mostly generalizable method, but the repo-specific reading order should remain local
-- `.codex/skills/root-cause-reviewer/`: mostly generalizable method, but local documentation and review expectations should remain local
-- `.codex/skills/test-coverage-guardian/`: generally portable if stripped of template-specific test and docs requirements
-- `.codex/skills/ux-design-system-enforcer/`: portable only after removing local design-system and component-library assumptions
-- `.codex/skills/security-privacy-reviewer/`: partially portable; keep legal and policy references repo-local
-- `.codex/skills/gdpr-privacy-reviewer/`: usually repo-local unless you explicitly want a GDPR-specialist global skill
-- `.codex/skills/feature-docs-updater/`: partially portable; docs locations and required artifacts are template-specific
-- `.codex/skills/deploy-readiness-checker/`: portable as a generic release-readiness skill if local operational gates are removed
-- `.codex/skills/finops-observability-reviewer/`: mostly portable if cost and telemetry checks are rewritten generically
+- `.agents/skills/repo-architecture-reviewer/`: mostly generalizable method, but the repo-specific reading order should remain local
+- `.agents/skills/root-cause-reviewer/`: mostly generalizable method, but local documentation and review expectations should remain local
+- `.agents/skills/test-coverage-guardian/`: generally portable if stripped of template-specific test and docs requirements
+- `.agents/skills/ux-design-system-enforcer/`: portable only after removing local design-system and component-library assumptions
+- `.agents/skills/security-privacy-reviewer/`: partially portable; keep legal and policy references repo-local
+- `.agents/skills/gdpr-privacy-reviewer/`: usually repo-local unless you explicitly want a GDPR-specialist global skill
+- `.agents/skills/feature-docs-updater/`: partially portable; docs locations and required artifacts are template-specific
+- `.agents/skills/deploy-readiness-checker/`: portable as a generic release-readiness skill if local operational gates are removed
+- `.agents/skills/finops-observability-reviewer/`: mostly portable if cost and telemetry checks are rewritten generically
 
 ## Promotion Matrix
 
@@ -94,7 +94,9 @@ Use two layers instead of one:
 
 1. Global skills in `~/.codex/skills`
    - hold reusable methods and generic review heuristics
-2. Repo instructions in `AGENTS.md` and `.codex/`
+2. Repo-local skills in `.agents/skills/`
+   - hold reusable workflows that depend on this repository contract
+3. Repo instructions and subagents in `AGENTS.md` and `.codex/`
    - hold file paths, required docs, compliance scope, release gates, and architecture rules
 
 This keeps global skills broadly useful while preserving this template's stricter operating model.

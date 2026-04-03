@@ -1,4 +1,0 @@
-interface:
-  display_name: "UX Design System Enforcer"
-  short_description: "Controlla coerenza UI e accessibilita"
-  default_prompt: "Use $ux-design-system-enforcer to review this UI change for design-system consistency, state coverage, and baseline accessibility."
