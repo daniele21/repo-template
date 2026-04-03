@@ -12,10 +12,10 @@ const EXCLUDED_PATH_PARTS = [
   `${path.sep}.next${path.sep}`,
   `${path.sep}coverage${path.sep}`,
   `${path.sep}packages${path.sep}ui${path.sep}src${path.sep}tokens${path.sep}`,
+  `${path.sep}packages${path.sep}ui${path.sep}src${path.sep}theme-css.ts`,
   `${path.sep}packages${path.sep}contracts${path.sep}`,
   `${path.sep}packages${path.sep}domain${path.sep}`,
-  `${path.sep}apps${path.sep}api${path.sep}`,
-  `${path.sep}packages${path.sep}ui${path.sep}src${path.sep}button.ts`
+  `${path.sep}apps${path.sep}api${path.sep}`
 ];
 
 const INCLUDED_EXTENSIONS = new Set([".js", ".jsx", ".ts", ".tsx", ".mjs", ".cjs"]);

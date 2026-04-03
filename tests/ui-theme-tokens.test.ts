@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { getThemeTokens, renderButton } from "../packages/ui/src/index.ts";
+import { getThemeTokens, renderButton, renderThemeStyleTag } from "../packages/ui/src/index.ts";
 
 test("getThemeTokens returns both light and dark semantic themes", () => {
   const light = getThemeTokens("light");
@@ -12,14 +12,22 @@ test("getThemeTokens returns both light and dark semantic themes", () => {
   assert.ok(dark.action.primary.bg);
 });
 
-test("renderButton resolves semantic tokens for the selected theme", () => {
+test("renderButton emits class-based markup for the selected theme", () => {
   const darkSecondaryButton = renderButton({
     label: "Open settings",
     tone: "secondary",
     themeMode: "dark"
   });
 
-  assert.match(darkSecondaryButton, /background:#1E293B/);
-  assert.match(darkSecondaryButton, /color:#F8FAFC/);
-  assert.match(darkSecondaryButton, /border:1px solid #334155/);
+  assert.match(darkSecondaryButton, /class="ui-button ui-button--secondary"/);
+  assert.match(darkSecondaryButton, /data-ui-theme="dark"/);
+  assert.match(darkSecondaryButton, /type="button"/);
+});
+
+test("renderThemeStyleTag emits both light and dark theme selectors", () => {
+  const styleTag = renderThemeStyleTag();
+
+  assert.match(styleTag, /\[data-ui-theme="light"\]/);
+  assert.match(styleTag, /\[data-ui-theme="dark"\]/);
+  assert.match(styleTag, /--ui-action-primary-bg:/);
 });

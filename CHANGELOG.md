@@ -16,6 +16,7 @@ All notable changes to projects created from this template should be recorded he
 - Replaced machine-specific absolute links with portable relative links across operating and privacy docs.
 - Updated GitHub Actions workflows from Node 25 to Node 24 LTS.
 - Refactored `packages/ui` from a flat token file to primitive plus semantic theme tokens, added light and dark theme support, and updated the starter button helper to consume semantic tokens.
+- Reworked the starter UI package toward framework-agnostic primitives and patterns with centralized theme CSS and class-based markup instead of inline styling.
 
 ### Fixed
 
