@@ -9,11 +9,17 @@ const targets = [
   "packages/domain/src/tenant-settings-service.ts",
   "packages/ui/src/button.ts",
   "packages/ui/src/index.ts",
-  "packages/ui/src/tokens.ts",
+  "packages/ui/src/tokens/index.ts",
+  "packages/ui/src/tokens/primitives.ts",
+  "packages/ui/src/tokens/semantic/light.ts",
+  "packages/ui/src/tokens/semantic/dark.ts",
+  "scripts/check-design-system.mjs",
   "tests/tenant-settings-service.test.ts",
   "tests/api-tenant-settings.test.ts",
   "tests/server-startup.test.ts",
-  "tests/docs-check.test.ts"
+  "tests/docs-check.test.ts",
+  "tests/ui-theme-tokens.test.ts",
+  "tests/check-design-system.test.ts"
 ];
 
 const failures = [];

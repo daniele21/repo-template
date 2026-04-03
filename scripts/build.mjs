@@ -19,4 +19,8 @@ await cp(join(process.cwd(), "packages", "domain"), join(distRoot, "packages", "
   recursive: true
 });
 
+await cp(join(process.cwd(), "packages", "ui"), join(distRoot, "packages", "ui"), {
+  recursive: true
+});
+
 console.log("Build output written to dist/.");
