@@ -9,7 +9,8 @@ Opinionated template for building client-ready, multi-tenant B2B SaaS products w
 - Product, architecture, security, privacy, UX, operations, and FinOps docs
 - `AGENTS.md` as the main operating manual for humans and AI agents
 - `/.codex/instructions.md` as the short execution constitution for Codex
-- Specialist Codex skills for review and documentation workflows
+- `/.codex/agents/` for delegable custom subagents with stable operational roles
+- `/.agents/skills/` for repo-local workflow skills used for discovery, planning, review, and documentation sync
 - A dedicated GDPR governance pack for privacy-sensitive B2B projects
 - PR, issue, ADR, and feature spec templates
 - Real CI and governance checks that can be extended per project
@@ -21,9 +22,11 @@ Use this repo as an operating system, not just a code container.
 1. Read [AGENTS.md](./AGENTS.md)
 2. Read [.codex/instructions.md](./.codex/instructions.md)
 3. Read relevant files in [product/](./product), [docs/](./docs), and [adr/](./adr)
-4. Design before implementation
-5. Implement with tests and documentation updates
-6. Run specialist reviews through the skills listed in [.codex/skill-index.md](./.codex/skill-index.md)
+4. Use subagents from `/.codex/agents/` when the task benefits from delegation, parallel work, or sandbox separation
+5. Use workflow skills from `/.agents/skills/` for discovery, planning, review, and documentation workflows
+6. Design before implementation
+7. Implement with tests and documentation updates
+8. Run the relevant specialist reviews and docs sync before considering the task complete
 
 ## Structure
 
@@ -35,7 +38,8 @@ infra/      Infrastructure, deployment, and platform configuration
 product/    Product intent, scope, actors, and requirements
 docs/       Pillar docs, runbooks, and templates
 adr/        Architecture decision records
-.codex/     Codex operating guidance and local skill specs
+.agents/    Repo-local Codex skills discovered from the working tree
+.codex/     Codex operating guidance, subagent config, and custom agent specs
 .github/    CI workflows, issue templates, and PR template
 tests/      Cross-cutting tests and test utilities
 scripts/    Repository automation scripts
@@ -78,10 +82,13 @@ The starter is intentionally small and dependency-light. It demonstrates:
 Ask Codex to:
 
 1. Read `AGENTS.md`, `/.codex/instructions.md`, and the relevant product/docs files
-2. Propose an approach with risks, impacted layers, tests, and docs to update
-3. Implement
-4. Run the relevant review skills
-5. Apply remediations and sync docs, changelog, and ADRs when needed
+2. Spawn `repo_scout` when the task needs impact mapping, file discovery, or execution-path tracing
+3. Stop for decision framing when foundational choices are still open, using the relevant skills under `/.agents/skills/`
+4. Have `implementer` make the smallest correct change once direction is clear
+5. Have `reviewer` apply the relevant review lenses such as architecture, root cause, security/privacy, tests, observability, and release readiness
+6. Have `docs_syncer` update or propose updates to specs, ADRs, runbooks, and changelog when needed
+7. Use `docs_researcher` or `browser_debugger` only when the task benefits from external-doc verification or UI reproduction
+8. Apply remediations and keep docs aligned with implemented behavior
 
 The workflow is expanded in [.codex/project-context.md](./.codex/project-context.md).
 The repeatable implementation paths are listed in [.codex/golden-paths.md](./.codex/golden-paths.md).
