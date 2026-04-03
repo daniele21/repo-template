@@ -1,8 +1,19 @@
-import { createTenantSettingsService } from "../../../packages/domain/src/tenant-settings-service.js";
-import { validateTenantSettingsPatch } from "../../../packages/contracts/src/tenant-settings-contract.js";
-import { createJsonResponse, notFoundResponse, parseJsonBody } from "./http.js";
+import { validateTenantSettingsPatch } from "../../../packages/contracts/src/tenant-settings-contract.ts";
+import {
+  createTenantSettingsService,
+  type TenantSettingsRepository
+} from "../../../packages/domain/src/tenant-settings-service.ts";
+import {
+  createJsonResponse,
+  notFoundResponse,
+  parseJsonBody,
+  type HttpRequestLike,
+  type JsonResponse
+} from "./http.ts";
 
-export function createApp(repository) {
+export function createApp(
+  repository: TenantSettingsRepository
+): (request: HttpRequestLike) => Promise<JsonResponse> {
   const service = createTenantSettingsService({ repository });
 
   return async function handleRequest(request) {

@@ -8,17 +8,19 @@ const files = [
   ".codex/project-context.md",
   ".codex/review-checklists.md",
   ".codex/golden-paths.md",
-  "apps/api/src/app.js",
-  "apps/api/src/http.js",
-  "apps/api/src/server.js",
-  "apps/api/src/repository/in-memory-tenant-settings-repository.js",
-  "packages/contracts/src/tenant-settings-contract.js",
-  "packages/domain/src/tenant-settings-service.js",
-  "packages/ui/src/button.js",
-  "packages/ui/src/index.js",
-  "packages/ui/src/tokens.js",
-  "tests/tenant-settings-service.test.js",
-  "tests/api-tenant-settings.test.js"
+  "apps/api/src/app.ts",
+  "apps/api/src/http.ts",
+  "apps/api/src/server.ts",
+  "apps/api/src/repository/in-memory-tenant-settings-repository.ts",
+  "packages/contracts/src/tenant-settings-contract.ts",
+  "packages/domain/src/tenant-settings-service.ts",
+  "packages/ui/src/button.ts",
+  "packages/ui/src/index.ts",
+  "packages/ui/src/tokens.ts",
+  "tests/tenant-settings-service.test.ts",
+  "tests/api-tenant-settings.test.ts",
+  "tests/server-startup.test.ts",
+  "tests/docs-check.test.ts"
 ];
 
 const failures = [];

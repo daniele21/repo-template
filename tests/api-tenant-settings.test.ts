@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { createApp } from "../apps/api/src/app.js";
-import { createInMemoryTenantSettingsRepository } from "../apps/api/src/repository/in-memory-tenant-settings-repository.js";
+import { createApp } from "../apps/api/src/app.ts";
+import { createInMemoryTenantSettingsRepository } from "../apps/api/src/repository/in-memory-tenant-settings-repository.ts";
+import type { HttpRequestLike, JsonResponse } from "../apps/api/src/http.ts";
 
 test("GET /tenants/:id/settings returns default tenant settings", async () => {
   const app = createApp(createInMemoryTenantSettingsRepository());
@@ -32,7 +33,7 @@ test("PUT /tenants/:id/settings validates and persists settings", async () => {
   assert.equal(payload.data.auditExportEnabled, true);
 });
 
-function createRequest(method, url, body) {
+function createRequest(method: string, url: string, body?: unknown): HttpRequestLike {
   const payload = body ? [Buffer.from(JSON.stringify(body))] : [];
 
   return {

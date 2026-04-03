@@ -1,6 +1,24 @@
-import { defaultTenantSettings } from "../../contracts/src/tenant-settings-contract.js";
+import {
+  defaultTenantSettings,
+  type TenantSettings,
+  type TenantSettingsPatch
+} from "../../contracts/src/tenant-settings-contract.ts";
 
-export function createTenantSettingsService({ repository }) {
+export interface TenantSettingsRepository {
+  get(tenantId: string): Promise<Partial<TenantSettings> | undefined>;
+  save(tenantId: string, settings: TenantSettings): Promise<TenantSettings>;
+}
+
+export interface TenantSettingsService {
+  getTenantSettings(tenantId: string): Promise<TenantSettings>;
+  updateTenantSettings(tenantId: string, patch: TenantSettingsPatch): Promise<TenantSettings>;
+}
+
+export function createTenantSettingsService({
+  repository
+}: {
+  repository: TenantSettingsRepository;
+}): TenantSettingsService {
   if (!repository?.get || !repository?.save) {
     throw new Error("A repository with get/save methods is required.");
   }
@@ -17,7 +35,7 @@ export function createTenantSettingsService({ repository }) {
     async updateTenantSettings(tenantId, patch) {
       assertTenantId(tenantId);
       const current = await repository.get(tenantId);
-      const next = {
+      const next: TenantSettings = {
         ...defaultTenantSettings(),
         ...current,
         ...patch
@@ -37,7 +55,7 @@ export function createTenantSettingsService({ repository }) {
   };
 }
 
-function assertTenantId(tenantId) {
+function assertTenantId(tenantId: string): void {
   if (typeof tenantId !== "string" || tenantId.trim() === "") {
     throw new Error("tenantId is required.");
   }

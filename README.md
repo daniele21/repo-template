@@ -98,11 +98,11 @@ The repeatable implementation paths are listed in [.codex/golden-paths.md](./.co
 Use the tenant settings flow as the canonical end-to-end example for this template:
 
 1. Spec: [docs/specs/tenant-settings-demo-spec.md](./docs/specs/tenant-settings-demo-spec.md)
-2. Contract and defaults: [packages/contracts/src/tenant-settings-contract.js](./packages/contracts/src/tenant-settings-contract.js)
-3. Domain rules: [packages/domain/src/tenant-settings-service.js](./packages/domain/src/tenant-settings-service.js)
-4. App routing and request handling: [apps/api/src/app.js](./apps/api/src/app.js)
-5. Runtime entrypoint: [apps/api/src/server.js](./apps/api/src/server.js)
-6. Regression coverage: [tests/api-tenant-settings.test.js](./tests/api-tenant-settings.test.js) and [tests/tenant-settings-service.test.js](./tests/tenant-settings-service.test.js)
+2. Contract and defaults: [packages/contracts/src/tenant-settings-contract.ts](./packages/contracts/src/tenant-settings-contract.ts)
+3. Domain rules: [packages/domain/src/tenant-settings-service.ts](./packages/domain/src/tenant-settings-service.ts)
+4. App routing and request handling: [apps/api/src/app.ts](./apps/api/src/app.ts)
+5. Runtime entrypoint: [apps/api/src/server.ts](./apps/api/src/server.ts)
+6. Regression coverage: [tests/api-tenant-settings.test.ts](./tests/api-tenant-settings.test.ts) and [tests/tenant-settings-service.test.ts](./tests/tenant-settings-service.test.ts)
 
 This path demonstrates the intended split between spec, contract validation, domain behavior, app composition, and tests while keeping privacy-preserving defaults explicit.
 

@@ -1,6 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { createTenantSettingsService } from "../packages/domain/src/tenant-settings-service.js";
+import { createTenantSettingsService } from "../packages/domain/src/tenant-settings-service.ts";
+import type { TenantSettings, TenantSettingsPatch } from "../packages/contracts/src/tenant-settings-contract.ts";
+import type { TenantSettingsRepository } from "../packages/domain/src/tenant-settings-service.ts";
 
 test("tenant settings default to privacy-preserving values", async () => {
   const repository = createRepository();
@@ -30,8 +32,8 @@ test("tenant settings update keeps explicit privacy settings", async () => {
   assert.equal(settings.auditExportEnabled, true);
 });
 
-function createRepository() {
-  const store = new Map();
+function createRepository(): TenantSettingsRepository {
+  const store = new Map<string, TenantSettings>();
 
   return {
     async get(tenantId) {

@@ -1,4 +1,28 @@
-export const tokens = {
+export interface DesignTokens {
+  color: {
+    canvas: string;
+    ink: string;
+    accent: string;
+    accentStrong: string;
+    border: string;
+  };
+  spacing: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+  };
+  radius: {
+    sm: string;
+    md: string;
+  };
+  font: {
+    body: string;
+    mono: string;
+  };
+}
+
+export const tokens: DesignTokens = {
   color: {
     canvas: "#F4F7F5",
     ink: "#1F2933",

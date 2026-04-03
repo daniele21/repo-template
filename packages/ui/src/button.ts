@@ -1,6 +1,13 @@
-import { tokens } from "./tokens.js";
+import { tokens } from "./tokens.ts";
 
-export function renderButton({ label, tone = "primary" }) {
+export type ButtonTone = "primary" | "secondary";
+
+export interface RenderButtonInput {
+  label: string;
+  tone?: ButtonTone;
+}
+
+export function renderButton({ label, tone = "primary" }: RenderButtonInput): string {
   const tones = {
     primary: {
       background: tokens.color.accent,

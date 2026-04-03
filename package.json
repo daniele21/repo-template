@@ -8,8 +8,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "node apps/api/src/server.js",
-    "dev:watch": "node --watch-path=apps/api/src --watch-path=packages apps/api/src/server.js",
+    "dev": "node apps/api/src/server.ts",
+    "dev:watch": "node --watch-path=apps/api/src --watch-path=packages apps/api/src/server.ts",
     "lint": "node ./scripts/lint.mjs",
     "typecheck": "node ./scripts/typecheck.mjs",
     "test": "node --test",

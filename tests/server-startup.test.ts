@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {
   createStartupErrorMessage,
   getPortCandidates
-} from "../apps/api/src/server.js";
+} from "../apps/api/src/server.ts";
 
 test("getPortCandidates falls back across a small port range when PORT is not explicit", () => {
   assert.deepEqual(getPortCandidates({ requestedPort: 3000, hasExplicitPort: false }).slice(0, 3), [

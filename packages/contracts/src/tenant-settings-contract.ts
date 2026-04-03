@@ -1,6 +1,20 @@
-const VALID_VISIBILITIES = new Set(["private", "organization"]);
+export type ProfileVisibility = "private" | "organization";
 
-export function defaultTenantSettings() {
+export interface TenantSettings {
+  brandingColor: string;
+  profileVisibility: ProfileVisibility;
+  auditExportEnabled: boolean;
+}
+
+export interface TenantSettingsPatch {
+  brandingColor?: string;
+  profileVisibility?: ProfileVisibility;
+  auditExportEnabled?: boolean;
+}
+
+const VALID_VISIBILITIES = new Set<ProfileVisibility>(["private", "organization"]);
+
+export function defaultTenantSettings(): TenantSettings {
   return {
     brandingColor: "#0F4C5C",
     profileVisibility: "private",
@@ -8,12 +22,12 @@ export function defaultTenantSettings() {
   };
 }
 
-export function validateTenantSettingsPatch(input) {
+export function validateTenantSettingsPatch(input: unknown): TenantSettingsPatch {
   if (!input || typeof input !== "object" || Array.isArray(input)) {
     throw new Error("Tenant settings payload must be an object.");
   }
 
-  const patch = {};
+  const patch: TenantSettingsPatch = {};
 
   if ("brandingColor" in input) {
     if (typeof input.brandingColor !== "string" || !/^#[0-9A-Fa-f]{6}$/.test(input.brandingColor)) {
@@ -23,10 +37,10 @@ export function validateTenantSettingsPatch(input) {
   }
 
   if ("profileVisibility" in input) {
-    if (!VALID_VISIBILITIES.has(input.profileVisibility)) {
+    if (typeof input.profileVisibility !== "string" || !VALID_VISIBILITIES.has(input.profileVisibility as ProfileVisibility)) {
       throw new Error("profileVisibility must be private or organization.");
     }
-    patch.profileVisibility = input.profileVisibility;
+    patch.profileVisibility = input.profileVisibility as ProfileVisibility;
   }
 
   if ("auditExportEnabled" in input) {

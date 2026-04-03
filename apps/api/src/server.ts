@@ -1,12 +1,27 @@
 import http from "node:http";
-import { createApp } from "./app.js";
-import { createInMemoryTenantSettingsRepository } from "./repository/in-memory-tenant-settings-repository.js";
+import type { AddressInfo } from "node:net";
+import { createApp } from "./app.ts";
+import { createInMemoryTenantSettingsRepository } from "./repository/in-memory-tenant-settings-repository.ts";
 
 const DEFAULT_PORT = 3000;
 const MAX_PORT_FALLBACKS = 10;
 const app = createApp(createInMemoryTenantSettingsRepository());
 
-export function createServer() {
+export interface PortCandidateInput {
+  requestedPort: number;
+  hasExplicitPort: boolean;
+}
+
+export interface StartupErrorInput extends PortCandidateInput {
+  error: NodeJS.ErrnoException | Error | null | undefined;
+}
+
+export interface StartedApiServer {
+  server: http.Server;
+  port: number;
+}
+
+export function createServer(): http.Server {
   return http.createServer(async (req, res) => {
     try {
       const response = await app(req);
@@ -28,7 +43,7 @@ export function createServer() {
   });
 }
 
-export function getPortCandidates({ requestedPort, hasExplicitPort }) {
+export function getPortCandidates({ requestedPort, hasExplicitPort }: PortCandidateInput): number[] {
   if (hasExplicitPort) {
     return [requestedPort];
   }
@@ -36,7 +51,11 @@ export function getPortCandidates({ requestedPort, hasExplicitPort }) {
   return Array.from({ length: MAX_PORT_FALLBACKS }, (_, index) => requestedPort + index);
 }
 
-export function createStartupErrorMessage({ error, requestedPort, hasExplicitPort }) {
+export function createStartupErrorMessage({
+  error,
+  requestedPort,
+  hasExplicitPort
+}: StartupErrorInput): string {
   if (error?.code === "EADDRINUSE") {
     if (hasExplicitPort) {
       return `Port ${requestedPort} is already in use. Choose another port, for example: PORT=${requestedPort + 1} pnpm run dev`;
@@ -51,9 +70,9 @@ export function createStartupErrorMessage({ error, requestedPort, hasExplicitPor
 export async function startApiServer({
   requestedPort = DEFAULT_PORT,
   hasExplicitPort = false
-} = {}) {
+}: Partial<PortCandidateInput> = {}): Promise<StartedApiServer> {
   const portCandidates = getPortCandidates({ requestedPort, hasExplicitPort });
-  let lastError;
+  let lastError: NodeJS.ErrnoException | Error | null = null;
 
   for (const port of portCandidates) {
     const server = createServer();
@@ -69,7 +88,7 @@ export async function startApiServer({
 
       return { server, port };
     } catch (error) {
-      lastError = error;
+      lastError = error as NodeJS.ErrnoException | Error;
 
       if (error?.code !== "EADDRINUSE" || hasExplicitPort) {
         break;
@@ -86,9 +105,9 @@ export async function startApiServer({
   );
 }
 
-function listen(server, port) {
+function listen(server: http.Server, port: number): Promise<http.Server> {
   return new Promise((resolve, reject) => {
-    const onError = (error) => {
+    const onError = (error: NodeJS.ErrnoException) => {
       cleanup();
       reject(error);
     };

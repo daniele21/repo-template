@@ -5,12 +5,12 @@ Use the tenant settings demo as the default example for how a feature should tra
 ## End-to-End Path
 
 1. Product and scope: [tenant-settings-demo-spec.md](../specs/tenant-settings-demo-spec.md)
-2. Shared contract and defaults: [packages/contracts/src/tenant-settings-contract.js](../../packages/contracts/src/tenant-settings-contract.js)
-3. Domain behavior: [packages/domain/src/tenant-settings-service.js](../../packages/domain/src/tenant-settings-service.js)
-4. App orchestration: [apps/api/src/app.js](../../apps/api/src/app.js)
-5. Runtime entrypoint: [apps/api/src/server.js](../../apps/api/src/server.js)
-6. Persistence adapter: [apps/api/src/repository/in-memory-tenant-settings-repository.js](../../apps/api/src/repository/in-memory-tenant-settings-repository.js)
-7. Verification: [tests/api-tenant-settings.test.js](../../tests/api-tenant-settings.test.js) and [tests/tenant-settings-service.test.js](../../tests/tenant-settings-service.test.js)
+2. Shared contract and defaults: [packages/contracts/src/tenant-settings-contract.ts](../../packages/contracts/src/tenant-settings-contract.ts)
+3. Domain behavior: [packages/domain/src/tenant-settings-service.ts](../../packages/domain/src/tenant-settings-service.ts)
+4. App orchestration: [apps/api/src/app.ts](../../apps/api/src/app.ts)
+5. Runtime entrypoint: [apps/api/src/server.ts](../../apps/api/src/server.ts)
+6. Persistence adapter: [apps/api/src/repository/in-memory-tenant-settings-repository.ts](../../apps/api/src/repository/in-memory-tenant-settings-repository.ts)
+7. Verification: [tests/api-tenant-settings.test.ts](../../tests/api-tenant-settings.test.ts) and [tests/tenant-settings-service.test.ts](../../tests/tenant-settings-service.test.ts)
 
 ## Why This Example Exists
 
