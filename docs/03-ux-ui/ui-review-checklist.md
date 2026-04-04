@@ -35,6 +35,15 @@ Use this checklist for every non-trivial UI change.
 - [ ] Success or completion feedback exists where relevant
 - [ ] Validation states are clear
 
+## Collection Scaling
+
+- [ ] Every repeated-item view declares a collection strategy: bounded, paginated, incremental, or virtualized
+- [ ] Operational lists and tables do not render unbounded datasets
+- [ ] Pagination is used by default for admin tables, search results, and entity indexes unless another strategy is justified
+- [ ] Loading, empty, no-results, and error states exist for the collection
+- [ ] Filters, sorting, and pagination work coherently together when relevant
+- [ ] The screen remains usable when item count grows beyond demo-size data
+
 ## Accessibility Baseline
 
 - [ ] Semantic structure is present

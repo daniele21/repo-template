@@ -116,6 +116,16 @@ Minimum expectations:
 
 Accessibility is not an optional enhancement.
 
+### 8. Collections must scale intentionally
+
+Repeated-item UIs must be designed for real dataset size, not demo-size data.
+
+Rules:
+
+- every list, table, grid, search result, or repeated-item view must declare a bounded, paginated, incremental, or virtualized strategy
+- operational collections are paginated by default unless the spec explicitly marks them as bounded or browsing-oriented
+- full rendering is reserved for naturally small collections that are expected to remain small
+
 ## Interaction Principles
 
 - Use one primary action per section or step whenever possible.
